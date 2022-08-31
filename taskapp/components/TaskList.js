@@ -6,7 +6,7 @@ import TaskItem from "./TaskItem";
 
 import { getTasks, deleteTask } from "../api";
 
-const TaskList = () => {
+const TaskList = ({ navigation }) => {
 
     const [tasks, setTasks] = useState([])
     const [refreshing, setRefreshing] = React.useState(false)

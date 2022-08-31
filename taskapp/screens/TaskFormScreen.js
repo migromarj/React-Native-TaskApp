@@ -16,7 +16,7 @@ const TaskFormScreen = ({ navigation, route }) => {
   useEffect(() => {
     if (route.params && route.params.id) {
       setEditing(true)
-      navigation.setOptions({ headerTitle: "Updating Task" })
+      navigation.setOptions({ headerTitle: "Updating Task" });
       (async () => {
         const task = await getTask(route.params.id)
         setTask({ title: task.title, description: task.description })
@@ -24,7 +24,7 @@ const TaskFormScreen = ({ navigation, route }) => {
     }
   }, [])
 
-  const handleChange = (name, value) => setTask({ ...task, [name]: value });
+  const handleChange = (name, value) => setTask({ ...task, [name]: value })
 
   const handleSubmit = async () => {
     try {
@@ -37,7 +37,7 @@ const TaskFormScreen = ({ navigation, route }) => {
     } catch (error) {
       console.log(error)
     }
-  };
+  }
 
   return (
     <Layout>
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#e58e26",
     width: "90%",
   },
-});
+})
 
 export default TaskFormScreen

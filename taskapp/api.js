@@ -11,6 +11,11 @@ export const getTasks = async () => {
   return await res.json()
 }
 
+export const getTask = async (taskId) => {
+  const res = await fetch(`${API}/${taskId}`)
+  return await res.json()
+}
+
 export const saveTask = async (newTask) => {
   const res = await fetch(API, {
     method: "POST",
@@ -19,20 +24,9 @@ export const saveTask = async (newTask) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newTask),
-  });
-  return await res.json();
-};
-
-export const deleteTask = async (id) => {
-  await fetch(`${API}/${id}`, {
-    method: "DELETE",
-  });
-};
-
-export const getTask = async (taskId) => {
-  const res = await fetch(`${API}/${taskId}`);
-  return await res.json();
-};
+  })
+  return await res.json()
+}
 
 export const updateTask = async (taskId, newTask) => {
   const res = await fetch(`${API}/${taskId}`, {
@@ -42,6 +36,12 @@ export const updateTask = async (taskId, newTask) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(newTask),
-  });
-  return res;
-};
+  })
+  return res
+}
+
+export const deleteTask = async (id) => {
+  await fetch(`${API}/${id}`, {
+    method: "DELETE",
+  })
+}
