@@ -1,6 +1,6 @@
-import express from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
 
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUI from "swagger-ui-express";

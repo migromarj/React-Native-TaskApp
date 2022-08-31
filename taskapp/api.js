@@ -5,10 +5,10 @@ const API = "http://localhost:3000/tasks"
 //const API = "http://10.0.2.2:3000/tasks" 
 
 export const getTasks = async () => {
-    const res = await fetch(API, {
-        method: "GET",
-      })
-    return await res.json()
+  const res = await fetch(API, {
+    method: "GET",
+  })
+  return await res.json()
 }
 
 export const saveTask = async (newTask) => {
@@ -35,7 +35,6 @@ export const getTask = async (taskId) => {
 };
 
 export const updateTask = async (taskId, newTask) => {
-  console.log(taskId, newTask)
   const res = await fetch(`${API}/${taskId}`, {
     method: "PUT",
     headers: {
