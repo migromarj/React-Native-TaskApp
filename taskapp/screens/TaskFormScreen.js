@@ -20,7 +20,7 @@ const TaskFormScreen = ({ navigation, route }) => {
       (async () => {
         const task = await getTask(route.params.id)
         setTask({ title: task.title, description: task.description })
-      })
+      })()
     }
   }, [])
 
